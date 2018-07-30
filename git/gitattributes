@@ -1,0 +1,18 @@
+## Code
+*.c   diff=cpp
+*.h   diff=cpp
+*.tex diff=tex
+*.py  diff=python
+
+## Graphics
+*.svg -merge -text
+*.jpeg binary
+*.jpg binary
+*.png binary
+*.kra binary
+*.pdf binary
+
+## Fonts
+*.ttf binary
+*.otf binary
+*.tec binary

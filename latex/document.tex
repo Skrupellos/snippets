@@ -1,0 +1,38 @@
+%% /!\ Compile with lualatex /!\
+\documentclass[parskip]{scrartcl}
+
+%% Basic configuration (should be done before other packages are loaded)
+\IfFileExists{luatex85.sty}{\usepackage{luatex85}}{}
+\PassOptionsToPackage{hidelinks,luatex,pdfencoding=auto}{hyperref} %% Correct encoding of umlauts in TOC
+
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+
+\usepackage{graphics}              %% Provides \graphicspath
+\graphicspath{{../../img/}{../../img/tmp/}}
+
+
+%% Default package options
+\PassOptionsToPackage{right}{eurosym}
+
+%% Always required packages
+\usepackage{hyperref}              %% ????
+\usepackage{microtype}             %% makes line and par breaking nicer
+
+
+%% Mostly required packages
+\usepackage{csquotes}              %% Provides \enquote{...}
+\usepackage{eurosym}               %% Provides \EUR{...}
+
+\def\StripPrefix#1>{}
+\def\jobis#1{\fi
+	\def\predicate{#1}%
+	\edef\predicate{\expandafter\StripPrefix\meaning\predicate}%
+	\edef\job{\jobname}%
+	\ifx\job\predicate
+}
+
+
+\begin{document}
+	Hi :)
+\end{document}
